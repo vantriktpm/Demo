@@ -1,23 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.Negotiate" Version="6.0.6" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Update="appsettings.Development.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Update="appsettings.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.Negotiate" Version="6.0.6" />
+	</ItemGroup>
+	<Choose>
+		<When Condition=" '$(EnvironmentName)'=='Release' ">
+			<ItemGroup>
+				<Content Remove="appsettings.Development.json" />
+			</ItemGroup>
+		</When>
+	</Choose>
 </Project>
