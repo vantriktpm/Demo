@@ -8,6 +8,7 @@
         public string Author { get; set; }
         public DateTime Created { get; set; }
         public bool Status { get; set; }
+        public int DisplayOrder { get; set; }
 
     }
 }
