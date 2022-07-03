@@ -5,7 +5,7 @@ services:
     image: mcr.microsoft.com/mssql/server:2019-latest
     environment:
       ACCEPT_EULA: "Y"
-      SA_PASSWORD: "12345"
+      SA_PASSWORD: "Zxcasdqwe123"
       MSSQL_PID: Express
     ports:
       - "1433:1433"
@@ -14,7 +14,7 @@ services:
     environment:
       DatabaseServer: "mssql-server"
       DatabasePort: "1433"
-      DatabasePassword: '12345'
+      DatabasePassword: 'Zxcasdqwe123'
       DatabaseUser: 'SA'
       DatabaseName: 'BookDb'
     ports:
