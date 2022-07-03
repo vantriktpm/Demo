@@ -12,8 +12,8 @@ using MyDemo.EF.DataContext;
 namespace MyDemo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220626084300_Update")]
-    partial class Update
+    [Migration("20220703175518_InitialBook")]
+    partial class InitialBook
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

@@ -1,0 +1,25 @@
+version: '3.9'
+
+services:
+  mssql-server:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "12345"
+      MSSQL_PID: Express
+    ports:
+      - "1433:1433"
+  book-app:
+    build: .
+    environment:
+      DatabaseServer: "mssql-server"
+      DatabasePort: "1433"
+      DatabasePassword: '12345'
+      DatabaseUser: 'SA'
+      DatabaseName: 'BookDb'
+    ports:
+      - "8090:80"
+    
+  
+      
+    
