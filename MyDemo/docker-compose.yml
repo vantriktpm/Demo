@@ -9,6 +9,8 @@ services:
       MSSQL_PID: Express
     ports:
       - "1433:1433"
+    volumes:
+      - mssql-server-linux-data:/var/opt/mssql
   book-app:
     build: .
     environment:
@@ -19,7 +21,9 @@ services:
       DatabaseName: 'BookDb'
     ports:
       - "8090:80"
-    
+
+volumes:
+  mssql-server-linux-data: 
   
       
     

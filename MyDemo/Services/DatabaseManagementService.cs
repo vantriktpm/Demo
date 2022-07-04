@@ -9,7 +9,7 @@ namespace MyDemo.Services
         {
             using (var serviceScope = app.ApplicationServices.CreateScope())
             {
-                serviceScope.ServiceProvider.GetService<ApplicationDbContext>().Database.Migrate();
+                serviceScope?.ServiceProvider?.GetService<ApplicationDbContext>()?.Database.Migrate();
             }
         }
     }
